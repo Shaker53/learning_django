@@ -1,0 +1,16 @@
+<!-- all classes are from bootstrap -->
+<div class="alert alert-danger">{{ error }}</div>
+<form class="form-horizontal" method="post" action="/login">
+    {% csrf_token %}
+    <fieldset>
+        {% for field in form %}
+            <div class="control-group {% if field.errors %}has-error{% endif %}">
+                <label class="control-label">{{ field.label }}</label>
+                <div class="controls">{{ field }}</div>
+            </div>
+        {% endfor %}
+    </fieldset>
+    <div class="form-actions">
+        <button type="submit" class="btn-primary">LOGIN</button>
+    </div>
+</form>

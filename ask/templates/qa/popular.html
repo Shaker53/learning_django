@@ -1,0 +1,4 @@
+{% for question in page.object_list %}
+    <h4>{{question.title}}</h4>
+    <a href="{{question.get_url}}">link</a>
+{% endfor %}
